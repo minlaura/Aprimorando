@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 
-* { 
+* {
     margin: 0;
     padding: 0;
     background-color: rgb(101, 195, 207);
     list-style: none;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 header {
     height: 150px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
 }
 
 nav {
@@ -45,42 +47,40 @@ li:hover {
 
 #banner {
     background-image: url(https://0.soompi.io/wp-content/uploads/2024/04/26083857/NJ_BubbleGum_54.jpg);
-    background-position: 50% 50%;
+    background-position: center;
     background-size: cover;
     width: 100%;
     height: 700px;
+    transition: background-size 0.5s ease;
 }
 
 #teasercont {
     width: 100%;
-    height: 400px;
+    height: auto;
     display: flex;
     justify-content: center;
+    padding: 20px 0;
 }
 
 .content {
     width: 60%;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
 }
 
-.teaser {
+.teaser, #sinopse {
     width: 50%;
-}
-
-#sinopse {
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-    margin-left: 30px;
 }
 
 .description {
     color: white;
     font-size: 16px;
-    font-family: "Kdam Thmor Pro", sans-serif; 
+    font-family: "Kdam Thmor Pro", sans-serif;
     width: 70%;
+    line-height: 1.6;
 }
 
 .button {
@@ -136,31 +136,11 @@ li:hover {
     padding: 0 0 20px 20px;
     color: white;
     font-size: 17px;
-    font-family: "Kdam Thmor Pro", sans-serif; 
+    font-family: "Kdam Thmor Pro", sans-serif;
 }
 
 .card:hover {
     transform: scale(1.05);
-}
-
-.banner-1 {
-    background-image: url(https://pbs.twimg.com/media/GMHHs9kXUAAVSQX.jpg:large);
-}
-
-.banner-2 {
-    background-image: url(https://pbs.twimg.com/media/GMHsgwqXoAAH4cV.jpg:large);
-}
-
-.banner-3 {
-    background-image: url(https://i.pinimg.com/736x/4d/5c/02/4d5c028f3329a02c6b21a486e8898214.jpg);
-}
-
-.banner-4 {
-    background-image: url(https://pbs.twimg.com/media/GMTmoanXIAA2JfA?format=jpg&name=large);
-}
-
-.banner-5 {
-    background-image: url(https://i.pinimg.com/736x/ea/86/3f/ea863f905450e392be0c76fc8b8a164a.jpg);
 }
 
 footer {
@@ -170,6 +150,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    padding: 25px 0;
 }
 
 span {
@@ -187,54 +168,252 @@ span {
     align-items: center;
 }
 
+/* Base styles remain the same until media queries */
+
+/* Tablet and Mobile Common Styles */
+@media (max-width: 1024px) {
+    #banner {
+        height: 500px;
+    }
+
+    .button {
+        transition: .3s;
+    }
+
+    .card {
+        transition: .5s;
+    }
+
+    .card:hover {
+        transform: scale(1.02);
+    }
+
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    nav {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 250px;
+        border-radius: 8px;
+    }
+
+    #sinopse {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .description {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .button {
+        width: 100%;
+        max-width: 280px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .integrantescard {
+        margin-top: 30px;
+    }
+
+    .cards-content {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        height: 350px;
+        padding: 0 0 15px 15px;
+        font-size: 15px;
+    }
+
+    footer {
+        height: auto;
+        padding: 25px 0;
+        gap: 15px;
+    }
+
+    .footer-navigation {
+        display: block;
+        width: 100%;
+    }
+
+    .footer-list {
+        gap: 15px;
+    }
+
+    #logo {
+        width: 90px;
+    }
+
+    span {
+        font-size: 14px;
+    }
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
     nav {
         display: none;
     }
 
     #banner {
-        background-position: 40%;
+        height: 400px;
+        background-position: center;
     }
 
     #teasercont {
         width: 100%;
-        height: 400px;
-        display: flex;
-        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
     }
 
     .content {
-        width: 60%;
-        display: flex;
+        width: 90%;
         flex-direction: column;
+        gap: 30px;
     }
 
-    .teaser {
+    iframe {
         width: 100%;
+        height: 250px;
+        border-radius: 8px;
     }
 
     #sinopse {
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
     }
 
     .description {
         width: 100%;
+        font-size: 14px;
+        line-height: 1.6;
     }
 
     .button {
         width: 100%;
+        max-width: 280px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .integrantescard {
         margin-top: 30px;
     }
 
     .cards-content {
         grid-template-columns: 1fr;
-        margin-top: 150px;
+        width: 90%;
+        gap: 20px;
+    }
+
+    .card {
+        height: 350px;
+        padding: 0 0 15px 15px;
+        font-size: 15px;
+    }
+
+    footer {
+        height: auto;
+        padding: 25px 0;
+        gap: 15px;
     }
 
     .footer-navigation {
         display: block;
+        width: 100%;
+    }
+
+    .footer-list {
+        gap: 15px;
+    }
+
+    #logo {
+        width: 90px;
+    }
+
+    span {
+        font-size: 14px;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .content {
+        width: 85%;
+        gap: 40px;
+    }
+
+    iframe {
+        border-radius: 8px;
+    }
+
+    .cards-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .card {
+        height: 450px;
+    }
+
+    .description {
+        line-height: 1.6;
+    }
+}
+
+/* Small Desktop Styles */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .content {
+        width: 75%;
+    }
+
+    .cards-content {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .card {
+        height: 550px;
+    }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1441px) {
+    .content {
+        width: 70%;
+    }
+
+    .cards-content {
+        width: 85%;
+        max-width: 1800px;
+    }
+
+    iframe {
+        border-radius: 10px;
     }
 }
