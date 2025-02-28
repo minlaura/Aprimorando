@@ -192,7 +192,7 @@ span {
     align-items: center;
 }
 
-/* Base styles remain the same until media queries */
+
 
 /* Tablet and Mobile Common Styles */
 @media (max-width: 1024px) {
